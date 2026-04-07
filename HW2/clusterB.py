@@ -30,7 +30,7 @@ def compute_distortion(data, centroids, labels):
             distortion += np.sum(np.linalg.norm(cluster_points - centroids[k], axis=1)**2)
     return distortion
 
-def kmeans_a(data, initial_centroids):
+def kmeans_b(data, initial_centroids):
     centroids = initial_centroids.copy()
     history_d = []
     labels = np.zeros(len(data))
@@ -69,7 +69,7 @@ def kmeans_a(data, initial_centroids):
     return centroids, labels, history_d, iteration
 
 # 執行算法
-final_centroids, final_labels, distortion_history, total_iters = kmeans_a(data, init_a)
+final_centroids, final_labels, distortion_history, total_iters = kmeans_b(data, init_a)
 
 # --- 繪圖 1: Distortion Curve ---
 plt.figure(figsize=(10, 5))
